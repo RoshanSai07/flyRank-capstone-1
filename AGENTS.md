@@ -108,8 +108,15 @@ Keep each commit focused on one logical change.
 
 ## Important
 
-The technology stack is intentionally not defined in this file yet.
+## Established Stack & Technical Conventions
 
-Do not assume a framework, library, styling system, or architecture unless it has been explicitly established in the project.
+- **Framework**: React 19 + TypeScript + Vite 8
+- **Styling**: Tailwind CSS v4 (`@tailwindcss/vite` integration)
+- **Icons**: `lucide-react`
+- **Architecture**:
+  - `src/components/SettingsForm.tsx`: Controlled settings form with validation, real-time feedback, and goal presets.
+  - `src/components/WidgetPreview.tsx`: Side-by-side interactive simulation of the lead qualification widget.
+  - `src/types/widget.ts`: Strongly typed configurations, error structures, and presets.
+  - `src/utils/validation.ts`: URL and required field validation.
+- **State & Storage**: Component state synchronized to `localStorage` (`flyrank_widget_settings_v1`) with full reset capabilities.
 
-When the stack is chosen, update this file with the relevant technical conventions.
