@@ -106,10 +106,19 @@ Examples:
 
 Keep each commit focused on one logical change.
 
-## Important
+## Technology Stack & Conventions
 
-The technology stack is intentionally not defined in this file yet.
+The frontend stack is established as follows:
 
-Do not assume a framework, library, styling system, or architecture unless it has been explicitly established in the project.
+- **Framework**: React 18 + TypeScript
+- **Bundler & Tooling**: Vite (`@vitejs/plugin-react`)
+- **Styling**: Tailwind CSS v4 (`@tailwindcss/vite`) with `@import "tailwindcss";`
+- **Icons**: Lucide React (`lucide-react`)
+- **Testing**: Vitest (`vitest`), `@testing-library/react`, `@testing-library/jest-dom`, `@testing-library/user-event`, `jsdom`
+- **Architecture**:
+  - `src/types/`: Domain models for widget configuration, questions, presets, and theme appearance.
+  - `src/constants/`: Presets, design template definitions, and canonical defaults.
+  - `src/utils/`: Pure validation functions (`validation.ts`), WCAG 2.1 color contrast utilities (`contrast.ts`), and resilient browser storage persistence (`storage.ts`).
+  - `src/components/`: Modular UI sections (Business Settings, Goal Presets, Question Manager, Appearance Settings, Live Preview Canvas with simulated visitor flow).
+  - State management uses standard React hooks (`useState`, `useMemo`, `useEffect`) without unnecessary external state abstractions.
 
-When the stack is chosen, update this file with the relevant technical conventions.
